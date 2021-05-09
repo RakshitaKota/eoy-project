@@ -1,0 +1,43 @@
+#sortable {
+  list-style-type: none;
+  margin: auto;
+  padding: .5rem;
+  width: 100%;
+  background-color: lightgray;
+  border-radius: 1rem;
+  counter-reset: pntNum;
+}
+
+#sortable li {
+  margin: auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 0.4em;
+  font-size: 1.4em;
+  font-weight: bold;
+  width: 100%;
+  background-color: #00CCFF;
+  color: black;
+  text-align: center;
+  cursor: default;
+  border-style: outset;
+  border-radius: 1rem;
+  border-width: 5px;
+  border-color: gray;
+}
+#sortable li #num::before {
+  counter-increment: pntNum;
+  content: counter(pntNum);
+}
+
+.btn-circle {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 24px;
+  line-height: 2px;
+  border-radius: 18px;
+  border-color: gray;
+  border-width: .2rem;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="favicon.ico" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
+    <script src="calc.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Area Calculator</title>
+  </head>
+
+  <body>
+    <div class="container container-fluid">
+      <div class="jumbotron" style="margin-top: 20px;">
+        <div class="header text-center"><h1>Area Calculator</h1></div>
+        <div class="body text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card" style="background-color: lightblue;">
+                  <div class="card-header"><h3>Coordinates</h3></div>
+                  <div class="card-body">
+                    <ul
+                      id="sortable"
+                      class="ui-sortable"
+                      onchange="getCoords();"
+                    >
+                      <!--
+                        <li class="ui-sortable-handle form-group">
+                          <span class="form-inline justify-content-center">
+                            <div id="num"></div>
+                            (
+                            <input
+                              class="form-control form-control-sm text-right"
+                              type="number"
+                              style="width: 100px;"
+                            />
+                            ,
+                            <input
+                              class="form-control form-control-sm text-right"
+                              type="number"
+                              style="width: 100px;"
+                            />
+                            )
+                          </span>
+                        </li>
+                      -->
+                    </ul>
+                    <div>
+                      <button
+                        onClick="addCoordinate();"
+                        type="button"
+                        class="btn btn-default btn-circle"
+                      >
+                        <i
+                          class="fa fa-plus"
+                          aria-hidden="true"
+                          style="font-size: .7rem;"
+                        ></i>
+                      </button>
+                      <button
+                        onClick="removeLastCoordinate();"
+                        type="button"
+                        class="btn btn-warning btn-circle"
+                      >
+                        <i
+                          class="fa fa-minus"
+                          aria-hidden="true"
+                          style="font-size: .7rem;"
+                        ></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card" style="background-color: lightgreen;">
+                  <div class="card-header"><h3>Graph</h3></div>
+                  <div class="card-body">
+                    <canvas
+                      id="graphCanvas"
+                      width="400"
+                      height="400"
+                      style="background-color: white; border: 1px solid #000000"
+                    ></canvas>
+                  </div>
+                  <div class="card-footer">
+                    <h5>Area: <span id="areaLbl"></span></h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
